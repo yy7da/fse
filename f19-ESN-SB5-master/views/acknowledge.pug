@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h3 Welcomet to Emergency Social Network!
+  
+  h5 What is Emergency Social Network, or ESN?
+  p The goal is to provide civilians with a social network that they can use during emergency situations. The system is different from other existing social networks because it is specifically designed to effectively support small communities of civilians seriously affected in case of natural disasters like earthquake, tsunami, tornado, wildfire, etc.
+  h5 Agreement to Share
+  p By joining ESN, you consent our right to store your submitted status and share your current status with other members in the community.
+  
+  h5 Status Rule
+  div.container(class="mt-3")
+    div.row
+      div(class="col-xs-6" style="background-color:white;") OK
+      div(class="col-xs-6" style="background-color:white;") I am OK: I do not need help.
+      div(class="col-xs-3")
+        span(class="glyphicon glyphicon-thumbs-up")
+    
+
+  block content
+    form(class="needs-validation", novalidate, action="/acknowledge", method="post")
+      div(class="form-group")
+        div.form-check
+          input.form-check-input(type="checkbox", value="", id="agreeCheck", required)
+          label.form-check-label(for="agreeCheck") I Agree
+      button(type="submit", class="btn btn-primary") Submit
+
+    script
+      include ../public/javascripts/basic-form-validation.js
